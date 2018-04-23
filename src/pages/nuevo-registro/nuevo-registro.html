@@ -1,0 +1,66 @@
+
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Registro de Horas</ion-title>
+    </ion-navbar>
+  
+    <ion-navbar>
+      <ion-title>Nuevo Registro</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <form (ngSubmit)="onAddContact(f.value)" #f="ngForm">
+      <ion-list>
+          <ion-item>
+            <ion-label>Nombre del proyecto</ion-label>
+            
+              <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+                <ion-option>Proyecto 1 unidad 1</ion-option>
+                <ion-option>Proyecto 2 unidad 1</ion-option>
+                <ion-option>Proyecto 3 unidad 1</ion-option>
+              </ion-select>
+
+                
+              <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+                <ion-option>Proyecto 1 unidad 2</ion-option>
+                <ion-option>Proyecto 2 unidad 2</ion-option>
+                <ion-option>Proyecto 3 unidad 2</ion-option>
+              </ion-select>
+
+                
+              <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+                <ion-option>Proyecto 1 unidad 3</ion-option>
+                <ion-option>Proyecto 2 unidad 3</ion-option>
+                <ion-option>Proyecto 3 unidad 3</ion-option>
+              </ion-select>
+
+          </ion-item>
+          <ion-item>
+              <ion-label>Horas</ion-label>
+              <ion-input type="number" min="0" max="8" name="horas" ngModel></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Minutos</ion-label>
+            <ion-input type="number" min="0" max="59" name="minutos" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Fecha</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" name="fecha" ngModel></ion-datetime>
+        </ion-item>
+
+      </ion-list>
+  
+       <button ion-button block type="submit" [disabled]="!f.valid">Ingresar Registro</button>
+
+  </form>
+
+    
+
+</ion-content>

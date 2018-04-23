@@ -1,0 +1,6 @@
+export * from '../pages/registrodehoras/registrodehoras'
+export * from '../pages/horasextra/horasextra'
+export * from '../pages/nuevo-registro/nuevo-registro'
+export * from '../pages/ver-registro/ver-registro'
+export * from '../pages/nuevo-horas-extra/nuevo-horas-extra'
+export * from '../pages/ver-horas-extra/ver-horas-extra'

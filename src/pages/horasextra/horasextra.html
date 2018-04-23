@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Horas Extra</ion-title>
+  </ion-navbar>
+
+  <ion-navbar>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="onLoadNewPage()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>Registros de Horas Extra</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let tarea of tareas$ | async" (click)="onItemTappedtarea($event, tarea)">
+      <p><strong>Nombre de la Unidad: </strong>{{tarea.unidad}}</p> 
+      <p><strong>Nombre del proyecto: </strong>{{tarea.proyecto}}</p>
+      <p><strong>Horas: </strong>{{tarea.horas}}</p>
+      <p><strong>Minutos: </strong>{{tarea.minutos}}</p>
+      <p><strong>Fecha: </strong>{{tarea.fecha}}</p>
+    </button>
+    
+  </ion-list>
+</ion-content>

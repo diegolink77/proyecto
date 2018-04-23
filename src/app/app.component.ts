@@ -2,9 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {RegistroDeHorasPage, HorasExtraPage} from '../pages/pages'
+import { InfoPage } from '../pages/info/info';
+import { LoginPage } from '../pages/login/login';
+import { AuthProvider } from '../providers/auth/auth';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,23 +14,40 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
+  public userName : string = null;
+  hideLogout: boolean = null;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, 
+              public statusBar: StatusBar, 
+              public splashScreen: SplashScreen, 
+              private auth: AuthProvider  ) 
+              {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Registro de Horas', component: RegistroDeHorasPage },
+      { title: 'Horas Extra', component: HorasExtraPage },
+      { title: 'Pagina de Informacion', component: InfoPage}
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.auth.Session.subscribe(session=>{
+        if(session){
+            this.rootPage = InfoPage;
+            this.hideLogout = false;
+            this.userName = session.email;
+        }
+          else{
+            this.rootPage = LoginPage;
+          }
+      });
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

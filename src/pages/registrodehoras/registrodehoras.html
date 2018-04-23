@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registro de Horas</ion-title>
+  </ion-navbar>
+
+  <ion-navbar>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="onLoadNewPage()">
+            <ion-icon name="add"></ion-icon>
+         </button>
+    </ion-buttons>
+    <ion-title>Horas Registradas</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let contact of contacts$ | async" (click)="onItemTapped($event, contact)">
+     <p><strong>Nombre del proyecto: </strong>{{contact.proyecto}}</p>
+     <p><strong>Horas: </strong>{{contact.horas}}</p>
+     <p><strong>Minutos: </strong>{{contact.minutos}}</p>
+     <p><strong>Fecha: </strong>{{contact.fecha}}</p>
+    </button>
+    
+  </ion-list>
+
+</ion-content>
