@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-import { RegistroPage } from '../registro/registro';
 
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the RegistroPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,33 +11,29 @@ import { RegistroPage } from '../registro/registro';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-registro',
+  templateUrl: 'registro.html',
 })
-export class LoginPage {
+export class RegistroPage {
 
   user= { email : '', password : ''};
-  
 
   constructor(public navCtrl: NavController, 
-              public navParams: NavParams, 
-              public auth : AuthProvider,
-              public alertCtrl : AlertController
-              ) {
+    public navParams: NavParams, 
+    public auth : AuthProvider,
+    public alertCtrl : AlertController) {
   }
 
-  
-  signin(){
-    this.navCtrl.push(RegistroPage);
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad RegistroPage');
   }
-  
-  login()
-{
-    this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
-
-      }
-    )
-     .catch(err=>{
+  register(){
+    
+    this.auth.registerUser(this.user.email,this.user.password)
+    .then((user) => {
+      // El usuario se ha creado correctamente
+    })
+    .catch(err=>{
       let alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: err.message,
@@ -47,4 +42,5 @@ export class LoginPage {
       alert.present();
     })
   }
+
 }

@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
+import { RegistroPage } from '../pages/registro/registro';
 
   
 @NgModule({
@@ -29,7 +30,8 @@ import { LoginPage } from '../pages/login/login';
     VerRegistroPage,
     LoginPage,
     NuevoHorasExtraPage, 
-    VerHorasExtraPage
+    VerHorasExtraPage,
+    RegistroPage
     
   ],
   imports: [
@@ -52,7 +54,8 @@ import { LoginPage } from '../pages/login/login';
     VerRegistroPage,
     LoginPage,
     NuevoHorasExtraPage, 
-    VerHorasExtraPage
+    VerHorasExtraPage,
+    RegistroPage
   ],
   providers: [
     StatusBar,

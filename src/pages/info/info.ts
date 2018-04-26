@@ -3,6 +3,7 @@ import { IonicPage } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { RegisterService } from '../../services/register.service';
+import { TodoService } from '../../services/todo.service';
 @IonicPage()
 @Component({
   selector: 'page-info',
@@ -14,7 +15,8 @@ export class InfoPage {
   public userName : string = null;
   constructor(public navCtrl: NavController, 
               public auth : AuthProvider,
-              private registerService: RegisterService) {
+              private registerService: RegisterService,
+              private todoService: TodoService) {
 
   }
   ionViewWillEnter(){
@@ -22,8 +24,7 @@ export class InfoPage {
       if(session){
           this.userName = session.email;
           this.registerService.recibirmail(this.userName);
-
-          //this.registerService.mail= session.email;
+          this.todoService.recibirmail(this.userName);
       }
         
     }

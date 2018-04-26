@@ -13,11 +13,13 @@
   </ion-navbar>
 
   <ion-navbar>
-    <ion-title>Nueva Registro de Horas Extra</ion-title>
+    <ion-title>Nuevo Registro de Horas Extra</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  
 
   <form (ngSubmit)="onAddTarea(f.value)" #f="ngForm">
     <ion-list>
@@ -26,34 +28,29 @@
           <ion-select [(ngModel)]="unidad" multiple="false" name="unidad">  
             <ion-option>Unidad 1</ion-option>
             <ion-option>Unidad 2</ion-option>
-            <ion-option>Unidad 3</ion-option>    
+            <ion-option>Unidad 3</ion-option> 
           </ion-select>
     
         </ion-item>
         <ion-item>
           <ion-label>Nombre del proyecto</ion-label>
           
-            <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
-              <ion-option>Proyecto 1 unidad 1</ion-option>
-              <ion-option>Proyecto 2 unidad 1</ion-option>
-              <ion-option>Proyecto 3 unidad 1</ion-option>
-            </ion-select>
 
-              
-            <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+            <ion-select *ngIf="y== 1" [(ngModel)]="proyecto" multiple="false" name="proyecto">
               <ion-option>Proyecto 1 unidad 2</ion-option>
               <ion-option>Proyecto 2 unidad 2</ion-option>
               <ion-option>Proyecto 3 unidad 2</ion-option>
             </ion-select>
-
-              
+          
+          <div *ngIf="y==3">
             <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
               <ion-option>Proyecto 1 unidad 3</ion-option>
               <ion-option>Proyecto 2 unidad 3</ion-option>
               <ion-option>Proyecto 3 unidad 3</ion-option>
             </ion-select>
-
+          </div>
         </ion-item>
+
         <ion-item>
             <ion-label>Horas</ion-label>
             <ion-input type="number" min="0" max="8" name="horas" ngModel></ion-input>

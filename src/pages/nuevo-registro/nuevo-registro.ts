@@ -16,6 +16,8 @@ import { Registro } from '../../models/registro.model';
 })
 export class NuevoRegistroPage {
 
+  proyectos: Array<string>;
+
 
 
   constructor(public navCtrl: NavController, private registerService: RegisterService) {
