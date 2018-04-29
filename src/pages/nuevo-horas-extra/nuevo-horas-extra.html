@@ -30,25 +30,30 @@
             <ion-option>Unidad 2</ion-option>
             <ion-option>Unidad 3</ion-option> 
           </ion-select>
-    
+        
         </ion-item>
+        
         <ion-item>
           <ion-label>Nombre del proyecto</ion-label>
           
+          <ion-select *ngIf="unidad== 'Unidad 1'" [(ngModel)]="proyecto" multiple="false" name="proyecto">
+            <ion-option>Proyecto 1 unidad 1</ion-option>
+            <ion-option>Proyecto 2 unidad 1</ion-option>
+            <ion-option>Proyecto 3 unidad 1</ion-option>
+          </ion-select>
 
-            <ion-select *ngIf="y== 1" [(ngModel)]="proyecto" multiple="false" name="proyecto">
+          <ion-select *ngIf="unidad== 'Unidad 2'" [(ngModel)]="proyecto" multiple="false" name="proyecto">
               <ion-option>Proyecto 1 unidad 2</ion-option>
               <ion-option>Proyecto 2 unidad 2</ion-option>
               <ion-option>Proyecto 3 unidad 2</ion-option>
             </ion-select>
           
-          <div *ngIf="y==3">
-            <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+          <ion-select *ngIf="unidad== 'Unidad 3'" [(ngModel)]="proyecto" multiple="false" name="proyecto">
               <ion-option>Proyecto 1 unidad 3</ion-option>
               <ion-option>Proyecto 2 unidad 3</ion-option>
               <ion-option>Proyecto 3 unidad 3</ion-option>
             </ion-select>
-          </div>
+          
         </ion-item>
 
         <ion-item>

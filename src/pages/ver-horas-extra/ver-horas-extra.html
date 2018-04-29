@@ -27,21 +27,23 @@
 
   <ion-item>
     <ion-label>Proyecto</ion-label>
-    <ion-select type="ion-select" [(ngModel)]="tareap.proyecto" name="proyecto" ngModel required>
-      
-        <ion-option>Proyecto 1 unidad 1</ion-option>
-        <ion-option>Proyecto 2 unidad 1</ion-option>
-        <ion-option>Proyecto 3 unidad 1</ion-option>
-      
+    <ion-select *ngIf="tareap.unidad== 'Unidad 1'" [(ngModel)]="tareap.proyecto" multiple="false" name="proyecto">
+      <ion-option>Proyecto 1 unidad 1</ion-option>
+      <ion-option>Proyecto 2 unidad 1</ion-option>
+      <ion-option>Proyecto 3 unidad 1</ion-option>
+    </ion-select>
+
+    <ion-select *ngIf="tareap.unidad== 'Unidad 2'" [(ngModel)]="tareap.proyecto" multiple="false" name="proyecto">
         <ion-option>Proyecto 1 unidad 2</ion-option>
         <ion-option>Proyecto 2 unidad 2</ion-option>
         <ion-option>Proyecto 3 unidad 2</ion-option>
-      
+      </ion-select>
+    
+    <ion-select *ngIf="tareap.unidad== 'Unidad 3'" [(ngModel)]="tareap.proyecto" multiple="false" name="proyecto">
         <ion-option>Proyecto 1 unidad 3</ion-option>
         <ion-option>Proyecto 2 unidad 3</ion-option>
         <ion-option>Proyecto 3 unidad 3</ion-option>
-      
-    </ion-select>
+      </ion-select>
     
   </ion-item>
 

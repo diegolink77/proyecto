@@ -2,24 +2,29 @@ import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "angularfire2/database";
 import { Registro } from "../models/registro.model";
 
+
 @Injectable()
 export class RegisterService{
 
     public mail : string;
     public tabla : string;
+    public unidad : string;
 
     private contactsRef;
 
     constructor(private db:AngularFireDatabase ){
 
     }
-    
+    recibirunidad(value: string){
+        this.unidad=value;
+        console.log(this.unidad);
+    }
+
     recibirmail(value: string){
         this.mail=value;
         var split= this.mail.split('@',2);
         this.tabla= split[0];
-       //console.log(this.tabla);
-       this.contactsRef=this.db.list<Registro>(this.tabla +'/Horas Ingresadas')
+        this.contactsRef=this.db.list<Registro>(this.tabla +'/Horas Ingresadas')
     }
       
     addContact(value: Registro){

@@ -18,7 +18,7 @@ export class TodoService{
         this.mail=value;
         var split= this.mail.split('@',2);
         this.tabla= split[0];
-       console.log(this.tabla);
+       //console.log(this.tabla);
        this.tareasRef=this.db.list<Tarea>(this.tabla +'/Horas Extra')
     }
     addTarea(value: Tarea){

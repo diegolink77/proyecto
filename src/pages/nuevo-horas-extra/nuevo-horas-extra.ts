@@ -16,11 +16,7 @@ import { Tarea } from '../../models/todo.model';
 })
 export class NuevoHorasExtraPage {
 
- /* proyectos1: Array<any>=[{x: "proyecto 1"}, {x: "proyecto 2"}, {x: "proyecto 3"} ]
-  proyectos2: Array<any>=[{x: "proyecto 1"}, {x: "proyecto 2"}, {x: "proyecto 3"} ]
-  proyectos3: Array<any>=[{x: "proyecto 1"}, {x: "proyecto 2"}, {x: "proyecto 3"} ]*/
 
-  y: any= 1;
 
   constructor(public navCtrl: NavController, private TodoService: TodoService) {
   
@@ -28,11 +24,11 @@ export class NuevoHorasExtraPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.y);
+    
+    
   }
   onAddTarea(value: Tarea){
-//this.y=value.unidad;
-
+    
 
     this.TodoService.addTarea(value).then(ref => {
     //  console.log(ref.key);

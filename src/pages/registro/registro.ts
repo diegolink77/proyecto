@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-
+import { RegisterService } from '../../services/register.service';
+import { Registro } from '../../models/registro.model';
+import { InfoPage } from '../info/info';
 /**
  * Generated class for the RegistroPage page.
  *
@@ -17,18 +19,18 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class RegistroPage {
 
   user= { email : '', password : ''};
+  unidad: '';
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     public auth : AuthProvider,
-    public alertCtrl : AlertController) {
+    public alertCtrl : AlertController,
+    private registerService: RegisterService) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegistroPage');
-  }
+  
   register(){
-    
+
+    this.registerService.recibirunidad(this.unidad);
     this.auth.registerUser(this.user.email,this.user.password)
     .then((user) => {
       // El usuario se ha creado correctamente

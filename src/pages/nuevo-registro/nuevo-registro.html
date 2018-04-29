@@ -19,21 +19,21 @@
           <ion-item>
             <ion-label>Nombre del proyecto</ion-label>
             
-              <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+              <ion-select *ngIf="unidad== 'Unidad 1'"[(ngModel)]="proyecto" multiple="false" name="proyecto">
                 <ion-option>Proyecto 1 unidad 1</ion-option>
                 <ion-option>Proyecto 2 unidad 1</ion-option>
                 <ion-option>Proyecto 3 unidad 1</ion-option>
               </ion-select>
 
                 
-              <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+              <ion-select *ngIf="unidad== 'Unidad 2'"[(ngModel)]="proyecto" multiple="false" name="proyecto">
                 <ion-option>Proyecto 1 unidad 2</ion-option>
                 <ion-option>Proyecto 2 unidad 2</ion-option>
                 <ion-option>Proyecto 3 unidad 2</ion-option>
               </ion-select>
 
                 
-              <ion-select [(ngModel)]="proyecto" multiple="false" name="proyecto">
+              <ion-select *ngIf="unidad== 'Unidad 3'"[(ngModel)]="proyecto" multiple="false" name="proyecto">
                 <ion-option>Proyecto 1 unidad 3</ion-option>
                 <ion-option>Proyecto 2 unidad 3</ion-option>
                 <ion-option>Proyecto 3 unidad 3</ion-option>
