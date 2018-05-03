@@ -28,7 +28,7 @@ export class NuevoRegistroPage {
   onAddContact(value: Registro){
 
     this.registerService.addContact(value).then(ref => {
-      console.log(ref.key);
+     // console.log(ref.key);
     });
     this.navCtrl.pop();
   }

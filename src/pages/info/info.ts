@@ -29,8 +29,7 @@ export class InfoPage {
   }
   
   ionViewWillEnter(){  
-    //console.log(this.userUnidad);
-   
+    
     this.auth.Session.subscribe(session=>{
       if(session){
           this.userName = session.email;
