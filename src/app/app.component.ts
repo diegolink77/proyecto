@@ -29,9 +29,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Registro de Horas', component: RegistroDeHorasPage },
-      { title: 'Horas Extra', component: HorasExtraPage },
-      { title: 'Pagina de Informacion', component: InfoPage}
+      { title: 'Datos empleado', component: InfoPage},
+      { title: 'Lista de trabajos', component: RegistroDeHorasPage },
+      { title: 'Lista de horas de apoyo', component: HorasExtraPage },
     ];
 
   }

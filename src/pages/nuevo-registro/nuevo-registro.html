@@ -8,7 +8,7 @@
     </ion-navbar>
   
     <ion-navbar>
-      <ion-title>Nuevo Registro</ion-title>
+      <ion-title>Añadir Trabajo</ion-title>
     </ion-navbar>
   </ion-header>
 
@@ -16,6 +16,13 @@
 
   <form (ngSubmit)="onAddContact(f.value)" #f="ngForm">
       <ion-list>
+          <ion-item>
+              <ion-label>Nombre de la unidad</ion-label>
+              <ion-input text-right [(ngModel)]="unidad" name="unidad">  
+               
+              </ion-input>
+            
+            </ion-item>
           <ion-item>
             <ion-label>Nombre del proyecto</ion-label>
             
@@ -42,12 +49,12 @@
           </ion-item>
           <ion-item>
               <ion-label>Horas</ion-label>
-              <ion-input type="number" min="0" max="8" name="horas" ngModel></ion-input>
+              <ion-input text-right type="number" min="0" max="8" name="horas" ngModel></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label>Minutos</ion-label>
-            <ion-input type="number" min="0" max="59" name="minutos" ngModel></ion-input>
+            <ion-input text-right type="number" min="0" max="59" name="minutos" ngModel></ion-input>
         </ion-item>
 
         <ion-item>

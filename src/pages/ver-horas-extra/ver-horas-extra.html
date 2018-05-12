@@ -49,12 +49,12 @@
 
   <ion-item>
       <ion-label>Horas</ion-label>
-      <ion-input type="number" [(ngModel)]="tareap.horas" min="0" max="8"name="horas" ngModel></ion-input>
+      <ion-input text-right type="number" [(ngModel)]="tareap.horas" min="0" max="8"name="horas" ngModel></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Minutos</ion-label>
-    <ion-input type="number" [(ngModel)]="tareap.minutos" min="0" max="59" name="minutos" ngModel></ion-input>
+    <ion-input text-right type="number" [(ngModel)]="tareap.minutos" min="0" max="59" name="minutos" ngModel></ion-input>
   </ion-item>
 
   <ion-item>
@@ -62,8 +62,8 @@
       <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="tareap.fecha" name="fecha" ngModel></ion-datetime>
     </ion-item>
 
-<button ion-button block (click)="onUpdateTarea(tareap)">Modificar Registro</button>
+<button ion-button block (click)="onUpdateTarea(tareap)"color="secondary">Modificar Registro</button>
 
-<button ion-button block (click)="onRemoveTarea(tareap)">Eliminar Registro</button>
+<button ion-button block (click)="onRemoveTarea(tareap)"color="danger">Eliminar Registro</button>
 
 </ion-content>

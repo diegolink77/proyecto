@@ -3,18 +3,19 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Registro de Horas</ion-title>
+    <ion-title>Datos del Empleado</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h1>Sobre la App</h1>
-    <p>Aplicación para registro y aprobacion de horas de trabajo en proyectos por unidad</p>
-    <h2>Sobre el desarrollador</h2>
-    <p>Grupo 6</p>
-    <p>https://github.com/100055143/ejercicio_optativo/</p>
-  <button ion-button block (click)="cerrarSesion()">Cerrar Sesión</button>
+    <h1>Bienvenido</h1>
+    <img  width="80" height="80" src="assets/imgs/infologo.jpg" class="center"/>
   <p><strong>Usuario: </strong>{{userName}}</p>
+ 
+  <p><strong>Unidad: </strong>{{userUnidad}}</p>
+  
+  
+  <button ion-button block (click)="cerrarSesion()"color="danger">Cerrar Sesión</button>
   
   
   

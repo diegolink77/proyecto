@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Select } from 'ionic-angular';
 import { RegisterService } from '../../services/register.service';
 import { Registro } from '../../models/registro.model';
 /**
@@ -16,21 +16,26 @@ import { Registro } from '../../models/registro.model';
 })
 export class NuevoRegistroPage {
 
-  proyectos: Array<string>;
+  public unidad: string;
 
 
 
   constructor(public navCtrl: NavController, private registerService: RegisterService) {
 
-   
+    
   }
 
+  ionViewWillEnter(){ 
+this.unidad= this.registerService.unidad;
+//console.log(this.unidad);
+  }
   onAddContact(value: Registro){
 
     this.registerService.addContact(value).then(ref => {
      // console.log(ref.key);
     });
     this.navCtrl.pop();
+    
   }
 
  

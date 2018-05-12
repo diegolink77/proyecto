@@ -6,15 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Registro de nuevo usuario</ion-title>
+  <ion-navbar color="a" background-color="primary">
+    <ion-title>Registro de Nuevo Usuario</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content >
-  
     <ion-list>
         <form>
           <ion-item>
@@ -50,17 +49,15 @@
               </ion-select>
         
             </ion-item>
-         
+        
           <div padding>
-    
+            <h3>Crear nuevo usuario</h3>
             <button
-              ion-button 
+              icon-only class="center"
               (click)="register()"
               type="submit"
-              color="secondary"
-              block
             >
-              Dar de alta
+            <img width="100" height="100" src="assets/imgs/nuevousuario.jpg"/>
             </button>
           </div>
         </form>

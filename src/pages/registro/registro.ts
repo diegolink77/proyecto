@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { AuthProvider } from '../../providers/auth/auth';
 import { RegisterService } from '../../services/register.service';
 import { Registro } from '../../models/registro.model';
-import { InfoPage } from '../info/info';
+
 /**
  * Generated class for the RegistroPage page.
  *
@@ -19,7 +19,7 @@ import { InfoPage } from '../info/info';
 export class RegistroPage {
 
   user= { email : '', password : ''};
-  unidad: '';
+  unidad= '';
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
@@ -44,5 +44,5 @@ export class RegistroPage {
       alert.present();
     })
   }
-
+  
 }

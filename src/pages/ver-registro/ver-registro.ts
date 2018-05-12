@@ -22,7 +22,7 @@ export class VerRegistroPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private contactService: RegisterService) {
 
     this.contact = this.navParams.data;
-    console.log(this.contact.key);
+    //console.log(this.contact.key);
     
   }
 

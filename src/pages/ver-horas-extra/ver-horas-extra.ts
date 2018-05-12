@@ -21,7 +21,7 @@ export class VerHorasExtraPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private TodoService: TodoService) {
   
     this.tareap = this.navParams.data;
-    console.log(this.tareap.key);
+    //console.log(this.tareap.key);
   }
   onUpdateTarea(value: Tarea){
 
